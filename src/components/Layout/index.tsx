@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import { memo, useEffect } from "react";
 import AntLayout from "antd/es/layout/layout";
 import { Header as AntHeader } from "antd/es/layout/layout";
 import { Footer as AntFooter } from "antd/es/layout/layout";
@@ -6,33 +6,47 @@ import { Content as AntContent } from "antd/es/layout/layout";
 import { Outlet } from "react-router-dom";
 import { theme } from "../../theme";
 import { Header } from "../Header";
+import { StyledHeaderContainer, StyledLayout } from "./styled";
 
 const LayoutCmp = () => {
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 640px)");
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (e.matches) {
+        console.log("Desktop");
+      } else {
+        console.log("Tablet");
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
+
   return (
-    <AntLayout
-      style={{
-        minHeight: "100%",
-      }}
-    >
-      <AntHeader
+    <StyledLayout>
+      <StyledHeaderContainer>
+        <Header />
+      </StyledHeaderContainer>
+
+      <AntContent
         style={{
-          display: "flex",
-          alignItems: "center",
+          paddingBlock: theme.spacing.md,
+          paddingInline: theme.spacing.xxxl,
         }}
       >
-        <Header />
-      </AntHeader>
-      <AntContent>
         <Outlet />
       </AntContent>
       <AntFooter
         style={{
           backgroundColor: theme.colors.white,
+          borderRadius: `0 0 ${theme.spacing.xxxl} ${theme.spacing.xxxl}`,
         }}
-      >
-        Footer
-      </AntFooter>
-    </AntLayout>
+      ></AntFooter>
+    </StyledLayout>
   );
 };
 
