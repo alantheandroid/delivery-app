@@ -17,7 +17,11 @@ export type BoxProps = {
   $gap?: ThemeSpacings;
   $flex?: CSSProperties["flex"];
   $width?: CSSProperties["width"];
+  $minWidth?: CSSProperties["minWidth"];
+  $maxWidth?: CSSProperties["maxWidth"];
   $height?: CSSProperties["height"];
+  $minHeight?: CSSProperties["minHeight"];
+  $maxHeight?: CSSProperties["maxHeight"];
   $backgroundColor?: ThemeColors;
   $boxShadow?: CSSProperties["boxShadow"];
   $borderRadius?: CSSProperties["borderRadius"];

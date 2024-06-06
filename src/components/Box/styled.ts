@@ -30,4 +30,8 @@ export const StyledBox = styled.div<Omit<BoxProps, "children">>`
   border-radius: ${({ $borderRadius }) => $borderRadius};
   overflow: ${({ $overflow }) => $overflow};
   z-index: ${({ $zIndex }) => $zIndex};
+  min-width: ${({ $minWidth }) => $minWidth};
+  max-width: ${({ $maxWidth }) => $maxWidth};
+  min-height: ${({ $minHeight }) => $minHeight};
+  max-height: ${({ $maxHeight }) => $maxHeight};
 `;
