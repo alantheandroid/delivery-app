@@ -1,32 +1,39 @@
 import React, { ReactNode, memo } from "react";
-import { Card as AntCard, CardProps as AntCardProps } from "antd";
+import { CardProps as AntCardProps } from "antd";
 import { Image } from "../Image";
 import Meta from "antd/es/card/Meta";
+import StyledCard from "./styled";
 
 export type CardProps = {
   action?: ReactNode;
   title?: string;
+  description?: string;
   cover?: string;
-} & Pick<AntCardProps, "extra" | "children" | "size" | "styles" | "style">;
+} & Pick<AntCardProps, "extra" | "children" | "size" | "onClick">;
 
 const CardCmp = ({
   children,
   extra,
   cover,
   size,
-  style,
-  styles,
   action,
   title,
+  description,
+  onClick,
 }: CardProps) => {
   return (
-    <AntCard
+    <StyledCard
+      onClick={onClick}
+      hoverable
       style={{
-        display: "flex",
+        overflow: "hidden",
       }}
       styles={{
         cover: {
-          width: "25%",
+          height: "200px",
+          maxHeight: "200px",
+          minHeight: "200px",
+          overflow: "hidden",
         },
       }}
       size={size}
@@ -35,18 +42,19 @@ const CardCmp = ({
         <Image
           src={cover}
           alt={title}
-          width="100%"
-          height="100%"
+          height={"100%"}
+          width={"100%"}
           style={{
             objectFit: "cover",
+            borderRadius: "0px",
           }}
         />
       }
       actions={action ? [action] : undefined}
     >
-      <Meta title={title} />
+      <Meta title={title} description={description} />
       {children}
-    </AntCard>
+    </StyledCard>
   );
 };
 
