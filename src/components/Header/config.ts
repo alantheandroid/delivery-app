@@ -1,8 +1,10 @@
-export const navLinks: { label: string; path: string }[] = [
-  { label: "Home", path: "/" },
-  { label: "Order online", path: "/" },
-  { label: "Menu", path: "/" },
-  { label: "Login", path: "/" },
-  { label: "Printable menu", path: "/" },
-  { label: "Catering", path: "/" },
+import { ButtonProps } from "antd";
+
+export const navLinks: {
+  label: string;
+  path: string;
+  type?: ButtonProps["type"];
+}[] = [
+  { label: "Sign in", path: "/" },
+  { label: "Register", path: "/", type: "primary" },
 ];

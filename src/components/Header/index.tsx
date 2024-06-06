@@ -6,12 +6,19 @@ import { Text } from "../Text";
 
 const HeaderCmp = () => {
   return (
-    <Box $justifyContent="space-between" $alignItems="center" $width="100%">
-      <Text variant="h1">Mrs. Kumar's</Text>
+    <Box
+      $justifyContent="space-between"
+      $alignItems="center"
+      $width="100%"
+      $flexWrap="wrap"
+    >
+      <Text variant="h1" strong>
+        Nissalivery
+      </Text>
 
       <Box $gap="lg">
-        {navLinks.map(({ label, path }) => (
-          <Button key={label} type="link" href={path} textColor="secondary">
+        {navLinks.map(({ label, path, type }) => (
+          <Button key={label} type={type ? type : "text"} href={path}>
             {label}
           </Button>
         ))}
