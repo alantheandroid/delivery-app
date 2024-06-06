@@ -1,20 +1,9 @@
-import {
-  MdMenu,
-  MdSearch,
-  MdPersonOutline,
-  MdHorizontalRule,
-} from "react-icons/md";
-
-import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaAngleRight, FaArrowRight, FaMagnifyingGlass } from "react-icons/fa6";
 
 export const icons = {
-  dash: MdHorizontalRule,
-  facebook: FaFacebook,
-  instagram: FaInstagram,
-  menu: MdMenu,
-  search: MdSearch,
-  user: MdPersonOutline,
-  youtube: FaYoutube,
+  angle: FaAngleRight,
+  arrow: FaArrowRight,
+  search: FaMagnifyingGlass,
 } as const;
 
 export type Icons = keyof typeof icons;
