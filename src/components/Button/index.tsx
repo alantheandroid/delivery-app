@@ -7,30 +7,37 @@ import { Icon } from "../Icon";
 type Props = {
   icon?: Icons;
   iconSize?: string;
+  iconRotation?: string;
   textColor?: ThemeColors;
   fullWidth?: boolean;
-} & Pick<AntButtonProps, "type" | "children" | "onClick" | "href">;
+} & Pick<AntButtonProps, "type" | "children" | "onClick" | "href" | "target">;
 
 const ButtonCmp = ({
   type,
   children,
   icon,
   iconSize,
+  iconRotation,
   textColor,
   fullWidth,
   href,
+  target,
   onClick,
 }: Props) => {
   return (
     <AntButton
+      target={target}
       style={{
         display: "flex",
-        justifyContent: "center",
         alignItems: "center",
         padding: type === "link" ? 0 : undefined,
         color: textColor ? theme.colors[textColor] : undefined,
       }}
-      icon={icon ? <Icon name={icon} size={iconSize} /> : null}
+      icon={
+        icon ? (
+          <Icon name={icon} size={iconSize} rotation={iconRotation} />
+        ) : null
+      }
       type={type}
       onClick={onClick}
       block={fullWidth}
