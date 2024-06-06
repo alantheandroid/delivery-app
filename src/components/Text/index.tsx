@@ -27,15 +27,20 @@ const TextCmp = ({
 
   return (
     <Component
-      ellipsis={{
-        rows,
-        expanded: !!rows,
-        defaultExpanded: !!rows,
-      }}
+      ellipsis={
+        rows
+          ? {
+              rows,
+              expanded: !!rows,
+              defaultExpanded: !!rows,
+            }
+          : false
+      }
       style={{
         color: color ? theme.colors[color] : "inherit",
         textAlign: align,
         fontWeight: strong ? (variant ? 800 : 600) : "",
+        fontFamily: strong ? "Rubik-Bold" : "Rubik",
       }}
       level={level}
       italic={italic}
