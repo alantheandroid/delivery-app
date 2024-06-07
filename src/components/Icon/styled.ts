@@ -1,6 +1,5 @@
-import { ThemeColors } from "@/theme";
 import styled from "styled-components";
-import Icon from "@ant-design/icons";
+import { ThemeColors } from "../../theme";
 
 type Props = { $size?: number; $color?: ThemeColors; $rotation?: number };
 

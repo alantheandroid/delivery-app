@@ -1,6 +1,6 @@
 "use client";
 
-import React, { CSSProperties, PropsWithChildren, memo } from "react";
+import { CSSProperties, PropsWithChildren, memo } from "react";
 import { StyledBox } from "./styled";
 import { ThemeColors, ThemeSpacings } from "../../theme";
 

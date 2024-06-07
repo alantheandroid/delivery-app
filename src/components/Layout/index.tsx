@@ -1,6 +1,4 @@
 import { memo, useEffect } from "react";
-import AntLayout from "antd/es/layout/layout";
-import { Header as AntHeader } from "antd/es/layout/layout";
 import { Footer as AntFooter } from "antd/es/layout/layout";
 import { Content as AntContent } from "antd/es/layout/layout";
 import { Outlet } from "react-router-dom";

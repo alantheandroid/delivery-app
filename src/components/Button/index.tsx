@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import { Button as AntButton, ButtonProps as AntButtonProps } from "antd";
 import { ThemeColors, theme } from "../../theme";
 import { Icons } from "../Icon/config";

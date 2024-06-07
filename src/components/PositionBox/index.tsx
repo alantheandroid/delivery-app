@@ -1,6 +1,6 @@
 "use client";
 
-import React, { CSSProperties, memo } from "react";
+import { CSSProperties, memo } from "react";
 import { BoxProps } from "../Box";
 import { StyledPositionBox } from "./styled";
 

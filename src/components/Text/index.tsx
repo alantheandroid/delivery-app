@@ -1,4 +1,4 @@
-import React, { CSSProperties, memo } from "react";
+import { CSSProperties, memo } from "react";
 import AntText, { TextProps as AntTextProps } from "antd/es/typography/Text";
 import AntTitle from "antd/es/typography/Title";
 import { ThemeColors, theme } from "../../theme";

@@ -1,5 +1,5 @@
-import React, { memo } from "react";
-import { Image as AntImage, ImageProps as AntImageProps, Skeleton } from "antd";
+import { memo } from "react";
+import { Image as AntImage, ImageProps as AntImageProps } from "antd";
 
 type Props = Pick<AntImageProps, "src" | "alt" | "width" | "height" | "style">;
 

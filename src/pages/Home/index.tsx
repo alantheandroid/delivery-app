@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { Card } from "../../components/Card";
 import { mockRestaurants, tags } from "./config";
 import StyledRestaurantsGrid from "./styled";
@@ -6,7 +6,6 @@ import { Box } from "../../components/Box";
 import { Button } from "../../components/Button";
 import { Text } from "../../components/Text";
 import { useNavigate } from "react-router-dom";
-import { Flower, FlowerNode, FlowerRoute } from "@stackhouseos/flower-react";
 
 const Home = () => {
   const navigate = useNavigate();

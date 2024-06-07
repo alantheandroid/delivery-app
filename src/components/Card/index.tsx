@@ -1,4 +1,4 @@
-import React, { ReactNode, memo } from "react";
+import { ReactNode, memo } from "react";
 import { CardProps as AntCardProps } from "antd";
 import { Image } from "../Image";
 import Meta from "antd/es/card/Meta";
