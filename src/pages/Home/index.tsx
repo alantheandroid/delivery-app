@@ -6,6 +6,7 @@ import { Box } from "../../components/Box";
 import { Button } from "../../components/Button";
 import { Text } from "../../components/Text";
 import { useNavigate } from "react-router-dom";
+import { Carousel } from "../../components/Carousel";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -51,9 +52,10 @@ const Home = () => {
         Restaurants
       </Text>
 
-      <Box $gap="xxl" $flexDirection="row" $overflow="clip">
+      <Carousel variableWidth arrows slidesToScroll={3} swipeToSlide infinite>
         {tagsMapping}
-      </Box>
+      </Carousel>
+
       <StyledRestaurantsGrid>
         {restaurants.map(({ id, image, name, shortDesc }) => (
           <Card

@@ -1,58 +1,43 @@
-import { memo } from "react";
-import {
-  Carousel as AntCarousel,
-  CarouselProps as AntCarouselProps,
-} from "antd";
+import { memo, useEffect } from "react";
+import { CarouselProps as AntCarouselProps } from "antd";
+import StyledCarousel from "./styled";
 
 type Props = Pick<
   AntCarouselProps,
-  | "autoplay"
-  | "dots"
-  | "speed"
-  | "slidesToShow"
+  | "infinite"
   | "slidesToScroll"
   | "swipeToSlide"
   | "arrows"
-  | "infinite"
   | "variableWidth"
-  | "rows"
-  | "slidesPerRow"
-  | "centerMode"
   | "children"
 >;
 
 const CarouselCmp = ({
-  autoplay,
-  dots = false,
-  speed,
-  slidesToShow,
   slidesToScroll,
   swipeToSlide,
   arrows,
-  infinite,
   variableWidth,
-  rows,
-  slidesPerRow,
-  centerMode,
+  infinite,
   children,
 }: Props) => {
+  useEffect(() => {
+    const slickTrack = document.querySelector(".slick-track");
+    slickTrack?.childNodes.forEach((child) => {
+      (child as HTMLElement).classList.add("slick-active");
+    });
+  }, []);
+
   return (
-    <AntCarousel
-      autoplay={autoplay}
-      dots={dots}
-      speed={speed}
-      slidesToShow={slidesToShow}
+    <StyledCarousel
+      dots={false}
       slidesToScroll={slidesToScroll}
       swipeToSlide={swipeToSlide}
       arrows={arrows}
-      infinite={infinite}
       variableWidth={variableWidth}
-      rows={rows}
-      slidesPerRow={slidesPerRow}
-      centerMode={centerMode}
+      infinite={infinite}
     >
       {children}
-    </AntCarousel>
+    </StyledCarousel>
   );
 };
 

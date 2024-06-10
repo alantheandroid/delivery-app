@@ -10,7 +10,10 @@ type Props = {
   iconRotation?: string;
   textColor?: ThemeColors;
   fullWidth?: boolean;
-} & Pick<AntButtonProps, "type" | "children" | "onClick" | "href" | "target">;
+} & Pick<
+  AntButtonProps,
+  "type" | "children" | "onClick" | "href" | "target" | "className" | "shape"
+>;
 
 const ButtonCmp = ({
   type,
@@ -22,10 +25,14 @@ const ButtonCmp = ({
   fullWidth,
   href,
   target,
+  className,
+  shape,
   onClick,
 }: Props) => {
   return (
     <AntButton
+      className={className}
+      shape={shape}
       target={target}
       style={{
         display: "flex",
