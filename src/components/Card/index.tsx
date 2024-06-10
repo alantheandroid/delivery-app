@@ -9,7 +9,7 @@ export type CardProps = {
   title?: string;
   description?: string;
   cover?: string;
-} & Pick<AntCardProps, "extra" | "children" | "size" | "onClick">;
+} & Pick<AntCardProps, "extra" | "children" | "size" | "onClick" | "className">;
 
 const CardCmp = ({
   children,
@@ -19,10 +19,12 @@ const CardCmp = ({
   action,
   title,
   description,
+  className,
   onClick,
 }: CardProps) => {
   return (
     <StyledCard
+      className={className}
       onClick={onClick}
       hoverable
       style={{
